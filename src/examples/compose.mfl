@@ -1,0 +1,11 @@
+;; examples/compose.mfl
+(let compose
+  (lambda (f)
+    (lambda (g)
+      (lambda (x)
+        (f (g x)))))
+  (let double (lambda (x) (* x 2))
+    (let inc (lambda (x) (+ x 1))
+      (let h ((compose double) inc)
+        (h 5)))))
+;; -> IntVal 12

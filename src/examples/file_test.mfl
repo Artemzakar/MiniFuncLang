@@ -1,0 +1,8 @@
+;; examples/file_test.mfl
+(let tmp
+  (write-file "demo.txt" "42")
+  (let content
+    (read-file tmp)
+    (print content)))
+;; создаёт demo.txt с "42" и выводит:
+;; StringVal "42"

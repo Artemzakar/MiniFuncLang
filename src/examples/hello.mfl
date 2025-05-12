@@ -1,0 +1,4 @@
+;; examples/hello.mfl
+(write-file "test.txt" "Hello, MiniFuncLang!")
+;; создаёт test.txt с "Hello, MiniFuncLang!" и возвращает
+;; -> StringVal "test.txt"

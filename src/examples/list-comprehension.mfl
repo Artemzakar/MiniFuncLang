@@ -1,0 +1,10 @@
+;; examples/list-comprehension.mfl
+(letrec map
+  (lambda (f)
+    (lambda (lst)
+      (if (null lst)
+          (list)
+          (cons (f (head lst))
+                ((map f) (tail lst))))))
+  ((map (lambda (x) (* x x))) (list 1 2 3 4 5)))
+;; -> ListVal [IntVal 1; IntVal 4; IntVal 9; IntVal 16; IntVal 25]

@@ -1,0 +1,11 @@
+;; examples/foldl.mfl
+(letrec foldl
+  (lambda (f)
+    (lambda (acc)
+      (lambda (lst)
+        (if (null lst)
+            acc
+            (let newAcc (f acc (head lst))
+              (((foldl f) newAcc) (tail lst)))))))
+  (((foldl (lambda (acc) (lambda (x) (+ acc x)))) 0) (list 1 2 3 4 5)))
+;; -> IntVal 15

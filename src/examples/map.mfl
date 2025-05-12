@@ -1,0 +1,10 @@
+;; examples/map.mfl
+(letrec map
+  (lambda (f)
+    (lambda (lst)
+      (if (null lst)
+          (list)
+          (cons (f (head lst))
+                ((map f) (tail lst))))))
+  ((map (lambda (x) (* x 2))) (list 1 2 3 4 5)))
+;; -> ListVal [IntVal 2; IntVal 4; IntVal 6; IntVal 8; IntVal 10]
