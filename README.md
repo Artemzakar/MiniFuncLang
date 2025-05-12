@@ -120,10 +120,10 @@ MiniFuncLang/
 
 ## 📂 Примеры (в `src/examples/`)
 
-Каждый файл можно запустить так:
+Каждый файл можно запустить так (находясь в src):
 
 ```bash
-dotnet run --project MiniFuncLang.fsproj src/examples/<имя>.mfl
+dotnet run --project MiniFuncLang.fsproj examples/<имя>.mfl
 ```
 
 | Файл                     | Описание                              | Ожидаемый вывод                  |
